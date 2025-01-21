@@ -33,7 +33,7 @@ Le détecteur dans la salle scanne périodiquement les badges présents.
 
 **Action système :**  
 1. Le système met à jour la liste des présents pour confirmer que chaque badge scanné est encore dans la salle.
-2. Si un badge marqué comme "présent" **n’est pas détecté pendant plusieurs cycles** (ex : 5 minutes) :
+2. Si un badge marqué comme "présent" **n’est pas détecté pendant plusieurs cycles** (5 minutes) :
    - Le badge est retiré de la liste des présents.
 
 ---
@@ -78,7 +78,7 @@ Le détecteur dans la salle détecte un badge qui n’a pas été scanné à la 
 
 ### 3.4 Absence de scans périodiques pour un badge marqué comme présent
 **Déclencheur :**  
-Un badge marqué comme "présent" n’est pas détecté par le détecteur dans la salle pendant plusieurs cycles (ex : 5 minutes).
+Un badge marqué comme "présent" n’est pas détecté par le détecteur dans la salle pendant plusieurs cycles (5 minutes).
 
 **Action système :**  
 1. Une alerte "Absence potentielle détectée" est générée.
