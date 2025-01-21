@@ -3,13 +3,13 @@
 # 1. Contexte et contraintes
 - Détecteur sur la porte : Il détecte simplement qu'un badge BLE est passé, sans distinction d’entrée ou de sortie.
 - Détecteur dans la salle : Il vérifie périodiquement les badges présents dans la salle.
--- Solution : L’état (entrée ou sortie) doit être déduit en croisant les informations des deux détecteurs, notamment en comparant les détections de la porte avec les scans périodiques du détecteur de présence dans la salle.
+- Solution : L’état (entrée ou sortie) doit être déduit en croisant les informations des deux détecteurs, notamment en comparant les détections de la porte avec les scans périodiques du détecteur de présence dans la salle.
 
 # 2. Scénarios pour le tableau de bord des présents
 
 ## 2.1 Détection d’un badge à la porte
 
-Déclencheur :
+* Déclencheur :
 Le détecteur de la porte détecte un badge BLE.
 
 Action système :
