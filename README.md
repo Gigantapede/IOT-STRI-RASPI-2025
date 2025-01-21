@@ -9,17 +9,17 @@
 
 ## 2.1 Détection d’un badge à la porte
 
-* Déclencheur :
+- Déclencheur :
 Le détecteur de la porte détecte un badge BLE.
 
-Action système :
-Le système vérifie si le badge est déjà marqué comme "présent" dans la salle (grâce au détecteur de présence).
-Si le badge n'est pas détecté dans la salle :
-Le système considère que la personne entre dans la salle.
-Le badge est ajouté à la liste des présents avec l’heure d’entrée.
-Si le badge est déjà détecté dans la salle :
-Le système considère que la personne sort de la salle.
-Le badge est retiré de la liste des présents, et l’heure de sortie est enregistrée.
+- Action système :
+ 1. Le système vérifie si le badge est déjà marqué comme "présent" dans la salle (grâce au détecteur de présence).
+ 2. Si le badge n'est pas détecté dans la salle :
+  - Le système considère que la personne entre dans la salle.
+  - Le badge est ajouté à la liste des présents avec l’heure d’entrée.
+ 3. Si le badge est déjà détecté dans la salle :
+  - Le système considère que la personne sort de la salle.
+  - Le badge est retiré de la liste des présents, et l’heure de sortie est enregistrée.
 
 ## 2.2 Mise à jour des présents via le détecteur dans la salle
 
