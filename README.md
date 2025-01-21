@@ -9,6 +9,8 @@
 
 ## 2.1 Détection d’un badge à la porte
 
+![image](https://github.com/user-attachments/assets/97757d83-b1c4-45d1-8d03-1b375fdc32b4)
+
 - Déclencheur :
 Le détecteur de la porte détecte un badge BLE.
 
