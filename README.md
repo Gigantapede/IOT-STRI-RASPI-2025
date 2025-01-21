@@ -101,7 +101,3 @@ Le détecteur (porte ou salle) détecte deux (ou plusieurs) adresses @Mac associ
      - L’identifiant de l’étudiant.  
      - Heure de détection.
 3. Le tableau des warnings met en évidence ce problème pour alerter l’administrateur.
-
-# Diagramme UML BD :
-![Uploading image.png…]()
-
