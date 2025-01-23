@@ -1,0 +1,35 @@
+Raspberry Point d’accès Wifi:
+▪ SSID « presence »
+▪ Pwd : (xhc6T7mASs)
+
+Detecteur de porte:
+Lorsqu’il détecte MAC BLE d’un smartphone , il envoie ce MACBLE et envoie aussi toujours par défaut son Mac BLE et son MAC WIFI.
+
+{
+  "mac_ble_detecte": "MAC BLE détecté",
+  "mac_ble_du_detecteur": "MAC BLE par défaut",
+  "mac_wifi_du_detecteur": "MAC Wi-Fi par défaut"
+ 
+}
+topic mqtt
+/detecteur/porte/macwifi/xx:xx:xx:xx(string) !RQ: Le MACWIFI est celui du detecteur
+/detecteur/porte/iddetecteur/x(int)
+Detecteur de presence:
+Chaque 5 min , il envoie la liste de MACBLE détectés et envoie aussi toujours par défaut son Mac BLE et son MAC WIFI.
+{
+  {
+  "mac_ble_detectes": [
+    "MAC BLE détecté 1",
+    "MAC BLE détecté 2",
+    "MAC BLE détecté 3"
+  ],
+  "mac_ble_du_detecteur": "MAC BLE par défaut",
+  "mac_wifi_du_detecteur": "MAC Wi-Fi par défaut"
+ 
+}
+topic mqtt
+/detecteur/presence/macwifi/xx:xx:xx:xx(string)! RQ: Le MACWIFI est celui du detecteur
+/detecteur/presence/iddetecteur/x(int)
+
+
+Vous pouvez utiliser id{ 1,2,3} pour les detecteurs de porte et {4,5,6} pour les detecteurs de presence.
