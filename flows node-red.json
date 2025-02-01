@@ -1,0 +1,1542 @@
+[
+    {
+        "id": "87b20420b38f8613",
+        "type": "tab",
+        "label": "Mise à jour Présence avec idCours",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "9ff7894f72804cd8",
+        "type": "tab",
+        "label": "Presence Calendar (No UI Builder)",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "presence-flow",
+        "type": "tab",
+        "label": "Détecteur de Présence",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "1b342d9a33e45289",
+        "type": "tab",
+        "label": "Détecteur de Porte et Présence",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "73c24e6e23de2f24",
+        "type": "MySQLdatabase",
+        "name": "presence",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "PRESENCE",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "7e4b2f38.8c5d6",
+        "type": "mqtt-broker",
+        "name": "Broker MQTT",
+        "broker": "100.105.233.67",
+        "port": "1883",
+        "clientid": "NodeRED",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e6d3b2c4f3a0f5d7",
+        "type": "MySQLdatabase",
+        "name": "MariaDB",
+        "host": "localhost",
+        "port": "3306",
+        "db": "PRESENCE",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "e1f2g3h4",
+        "type": "ui_tab",
+        "name": "Schedule",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a1b2c3d4",
+        "type": "ui_group",
+        "name": "Scheduler",
+        "tab": "e1f2g3h4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "266c3fdd48dd0d7d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b9adfdf3ae5de281",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "838d5e9b8fba0e48",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "b9adfdf3ae5de281",
+        "order": 1,
+        "disp": true,
+        "width": "52",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dbConfig",
+        "type": "MySQLdatabase",
+        "name": "Presence DB",
+        "host": "localhost",
+        "port": "3306",
+        "db": "PRESENCE",
+        "tz": ""
+    },
+    {
+        "id": "85bc2de786afa561",
+        "type": "mqtt-broker",
+        "name": "BrokerMqttLocal",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "30426b700f9dcc44",
+        "type": "mqtt in",
+        "z": "87b20420b38f8613",
+        "d": true,
+        "name": "Détecteur Présence",
+        "topic": "detecteur/presence/macwifi/#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "7e4b2f38.8c5d6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 60,
+        "wires": [
+            [
+                "a08198441a8fefa7"
+            ]
+        ]
+    },
+    {
+        "id": "a08198441a8fefa7",
+        "type": "function",
+        "z": "87b20420b38f8613",
+        "name": "Trouver idSalle et idCours",
+        "func": "// Extraire les données du message MQTT\nconst mac_ble_detecteur = msg.payload.mac_ble_du_detecteur;\nconst mac_wifi_detecteur = msg.payload.mac_wifi_du_detecteur;\nconst badges_detectes = msg.payload.mac_ble_detectes;\nconst current_time = new Date().toISOString();\n\n// Construire la requête SQL pour trouver idSalle\nmsg.topic = `SELECT idSalle FROM DETECTEUR WHERE macBLE = '${mac_ble_detecteur}' AND macWIFI = '${mac_wifi_detecteur}'`;\nmsg.data = { badges_detectes, current_time }; // Stocker les données pour les prochaines étapes\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 60,
+        "wires": [
+            [
+                "1f2cae1f681cccbe",
+                "975b5d57b02b5c54"
+            ]
+        ]
+    },
+    {
+        "id": "1f2cae1f681cccbe",
+        "type": "mysql",
+        "z": "87b20420b38f8613",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Trouver idSalle",
+        "x": 670,
+        "y": 60,
+        "wires": [
+            [
+                "9b4a4c83c82cf2d4"
+            ]
+        ]
+    },
+    {
+        "id": "9b4a4c83c82cf2d4",
+        "type": "function",
+        "z": "87b20420b38f8613",
+        "name": "Trouver idCours",
+        "func": "// Si idSalle trouvé, chercher idCours actif\nif (msg.payload.length > 0) {\n    const idSalle = msg.payload[0].idSalle;\n    const current_time = msg.data.current_time;\n\n    // Construire la requête SQL pour trouver idCours actif\n    msg.topic = `SELECT idCours FROM COURS WHERE idSalle = ${idSalle} AND '${current_time}' BETWEEN DateInit AND DateFin`;\n    msg.data.idSalle = idSalle; // Stocker idSalle pour les prochaines étapes\n    return msg;\n} else {\n    // Aucun idSalle trouvé\n    node.error(\"Aucune salle correspondante au détecteur.\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 60,
+        "wires": [
+            [
+                "a948bc1a337fc447",
+                "b75d4b1933a9d730"
+            ]
+        ]
+    },
+    {
+        "id": "a948bc1a337fc447",
+        "type": "mysql",
+        "z": "87b20420b38f8613",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Trouver idCours actif",
+        "x": 1130,
+        "y": 60,
+        "wires": [
+            [
+                "a84de3610839b3a3"
+            ]
+        ]
+    },
+    {
+        "id": "a84de3610839b3a3",
+        "type": "function",
+        "z": "87b20420b38f8613",
+        "name": "Mettre à jour PRESENCE",
+        "func": "if (msg.payload.length > 0) {\n    const idCours = msg.payload[0].idCours; // Cours actif\n    const badges_detectes = msg.data?.badges_detectes || []; // Badges scannés\n    const current_time = new Date().toISOString().replace(\"T\", \" \").split(\".\")[0]; // Format MariaDB\n\n    // Si aucun badge détecté\n    if (badges_detectes.length === 0) {\n        node.error(\"Aucun badge détecté.\");\n        return null;\n    }\n\n    // Construire les requêtes SQL\n    const queries = [];\n\n    // 1. Mettre à jour les badges détectés comme présents\n    queries.push(`\n        UPDATE PRESENCE\n        SET Present = 1, DateDetection = '${current_time}'\n        WHERE idCours = ${idCours}\n          AND idBadge IN (\n              SELECT idBadge\n              FROM BADGE\n              WHERE macBLE IN (${badges_detectes.map(mac => `'${mac}'`).join(\", \")})\n          );\n    `);\n\n    // 2. Marquer les badges non détectés comme absents\n    queries.push(`\n        UPDATE PRESENCE\n        SET Present = 0\n        WHERE idCours = ${idCours}\n          AND idBadge NOT IN (\n              SELECT idBadge\n              FROM BADGE\n              WHERE macBLE IN (${badges_detectes.map(mac => `'${mac}'`).join(\", \")})\n          );\n    `);\n\n    // Générer la requête finale\n    msg.topic = queries.join(\" \");\n    return msg;\n} else {\n    // Aucun cours actif trouvé\n    node.error(\"Aucun cours actif pour cette salle et heure actuelle.\");\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 60,
+        "wires": [
+            [
+                "fd8d005ecd5f5a9b",
+                "5db0fc54d3ce8183"
+            ]
+        ]
+    },
+    {
+        "id": "fd8d005ecd5f5a9b",
+        "type": "mysql",
+        "z": "87b20420b38f8613",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Mise à jour PRESENCE",
+        "x": 1630,
+        "y": 60,
+        "wires": [
+            [
+                "52bf8a5f9413ae87"
+            ]
+        ]
+    },
+    {
+        "id": "52bf8a5f9413ae87",
+        "type": "debug",
+        "z": "87b20420b38f8613",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1880,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ed925839fd3d1147",
+        "type": "inject",
+        "z": "87b20420b38f8613",
+        "name": "Test Badge Porte (Entrée)",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"mac_ble_detectes\":[\"10:1A:7D:DA:71:11\",\"20:1A:7D:DA:71:11\"],\"mac_ble_du_detecteur\":\"AA:BB:CC:DD:EE:03\",\"mac_wifi_du_detecteur\":\"33:44:55:66:77:88\"}",
+        "payloadType": "json",
+        "x": 1350,
+        "y": 240,
+        "wires": [
+            [
+                "a08198441a8fefa7"
+            ]
+        ]
+    },
+    {
+        "id": "5db0fc54d3ce8183",
+        "type": "debug",
+        "z": "87b20420b38f8613",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1880,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "b75d4b1933a9d730",
+        "type": "debug",
+        "z": "87b20420b38f8613",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "975b5d57b02b5c54",
+        "type": "debug",
+        "z": "87b20420b38f8613",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "b163f15136b21236",
+        "type": "http in",
+        "z": "9ff7894f72804cd8",
+        "name": "Courses API",
+        "url": "/api/courses",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 174.20001220703125,
+        "y": 98.19999694824219,
+        "wires": [
+            [
+                "c1c0ba12d23a3a4b"
+            ]
+        ]
+    },
+    {
+        "id": "c1c0ba12d23a3a4b",
+        "type": "function",
+        "z": "9ff7894f72804cd8",
+        "name": "Build SQL Query",
+        "func": "const { start, end, filters } = msg.payload;\n\nmsg.topic = `\nSELECT c.idCours, c.Libelle, c.DateInit, c.DateFin, s.nomSalle,\n       b.idBadge, b.nom, b.prenom, p.Present, p.derniereDetectionPresence\nFROM COURS c\nJOIN PRESENCE p ON c.idCours = p.idCours\nJOIN BADGE b ON p.idBadge = b.idBadge\nJOIN SALLE s ON c.idSalle = s.idSalle\n`;\n\n// Store last update time\nflow.set('lastCourseUpdate', Date.now());\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 374.20001220703125,
+        "y": 98.19999694824219,
+        "wires": [
+            [
+                "ffeed9e85d1b7d81",
+                "aae15949c9c74b19"
+            ]
+        ]
+    },
+    {
+        "id": "ffeed9e85d1b7d81",
+        "type": "mysql",
+        "z": "9ff7894f72804cd8",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Fetch Courses",
+        "x": 574.2000122070312,
+        "y": 98.19999694824219,
+        "wires": [
+            [
+                "8188bf7278d1bca7"
+            ]
+        ]
+    },
+    {
+        "id": "74c9693931dbb723",
+        "type": "function",
+        "z": "9ff7894f72804cd8",
+        "name": "Format Response",
+        "func": "msg.headers = {\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Content-Type\": \"application/json\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 100,
+        "wires": [
+            [
+                "a6329370dcf27ee4",
+                "d0f7a3b3b849e77b"
+            ]
+        ]
+    },
+    {
+        "id": "a6329370dcf27ee4",
+        "type": "debug",
+        "z": "9ff7894f72804cd8",
+        "name": "Debug Courses",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 900,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d0f7a3b3b849e77b",
+        "type": "http response",
+        "z": "9ff7894f72804cd8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1090,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a8e2ce063f01b7d4",
+        "type": "uibuilder",
+        "z": "9ff7894f72804cd8",
+        "name": "",
+        "topic": "",
+        "url": "test",
+        "okToGo": true,
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "blank",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "7.1.0",
+        "showMsgUib": false,
+        "title": "",
+        "descr": "",
+        "editurl": "vscode://vscode-remote/ssh-remote+100.105.233.67/home/stri/.node-red/uibuilder/test/?windowId=_blank",
+        "x": 924.2000122070312,
+        "y": 438.1999969482422,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8188bf7278d1bca7",
+        "type": "function",
+        "z": "9ff7894f72804cd8",
+        "name": "Add Timestamp",
+        "func": "\n// Store last update time\nconst timestamp = flow.get('lastCourseUpdate') || Date.now();\n// Process courses (dates will be converted later)\nconst courses = msg.payload.reduce((acc, row) => {\n    const existing = acc.find(c => c.idCours === row.idCours);\n    \n    const attendeeData = {\n        idBadge: row.idBadge,\n        nom: row.nom,\n        prenom: row.prenom,\n        Present: row.Present,\n        derniereDetectionPresence: row.derniereDetectionPresence // UTC date\n    };\n    \n    if (existing) {\n        existing.attendees.push(attendeeData);\n    } else {\n        acc.push({\n            idCours: row.idCours,\n            Libelle: row.Libelle,\n            DateInit: row.DateInit, // UTC date\n            DateFin: row.DateFin,   // UTC date\n            nomSalle: row.nomSalle,\n            attendees: [attendeeData]\n        });\n    }\n    return acc;\n}, []);\n\nmsg.payload = { courses, timestamp };\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 654.2000122070312,
+        "y": 218.1999969482422,
+        "wires": [
+            [
+                "74c9693931dbb723",
+                "85e7c94268905fcc"
+            ]
+        ]
+    },
+    {
+        "id": "f9ddc613d6e24b49",
+        "type": "http in",
+        "z": "9ff7894f72804cd8",
+        "name": "Update Check",
+        "url": "/api/courses/check-updates",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 184.20001220703125,
+        "y": 558.1999969482422,
+        "wires": [
+            [
+                "update-check-process",
+                "7fcaf8b3e7b394f4"
+            ]
+        ]
+    },
+    {
+        "id": "0f9abcb43418e637",
+        "type": "debug",
+        "z": "9ff7894f72804cd8",
+        "name": "debug Process Update Check",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 784.2000122070312,
+        "y": 378.1999969482422,
+        "wires": []
+    },
+    {
+        "id": "85e7c94268905fcc",
+        "type": "debug",
+        "z": "9ff7894f72804cd8",
+        "name": "debug Add Timestamp",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 834.2000122070312,
+        "y": 318.1999969482422,
+        "wires": []
+    },
+    {
+        "id": "update-check-process",
+        "type": "function",
+        "z": "9ff7894f72804cd8",
+        "name": "Simple Update Check",
+        "func": "// Get client's last update time\nconst clientTime = msg.payload.lastUpdate || 0;\n\n// Get server's stored last update time\nconst serverTime = flow.get('lastCourseUpdate') || 0;\n\n// Prepare response\nmsg.payload = {\n    updated: true,\n    newTimestamp: serverTime\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 474.20001220703125,
+        "y": 558.1999969482422,
+        "wires": [
+            [
+                "update-check-response",
+                "0f9abcb43418e637"
+            ]
+        ]
+    },
+    {
+        "id": "update-check-response",
+        "type": "http response",
+        "z": "9ff7894f72804cd8",
+        "name": "",
+        "x": 714.2000122070312,
+        "y": 558.1999969482422,
+        "wires": []
+    },
+    {
+        "id": "aae15949c9c74b19",
+        "type": "debug",
+        "z": "9ff7894f72804cd8",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 434.20001220703125,
+        "y": 178.1999969482422,
+        "wires": []
+    },
+    {
+        "id": "2f26827a4f267a8c",
+        "type": "inject",
+        "z": "9ff7894f72804cd8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 214.20001220703125,
+        "y": 378.1999969482422,
+        "wires": [
+            [
+                "0f9abcb43418e637"
+            ]
+        ]
+    },
+    {
+        "id": "7fcaf8b3e7b394f4",
+        "type": "debug",
+        "z": "9ff7894f72804cd8",
+        "name": "debug 12",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 454.20001220703125,
+        "y": 418.1999969482422,
+        "wires": []
+    },
+    {
+        "id": "mqtt-presence",
+        "type": "mqtt in",
+        "z": "presence-flow",
+        "d": true,
+        "name": "Recevoir Données Présence",
+        "topic": "detecteur/presence/macwifi/#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "7e4b2f38.8c5d6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "parse-presence",
+                "a774704029fb5c8e"
+            ]
+        ]
+    },
+    {
+        "id": "parse-presence",
+        "type": "function",
+        "z": "presence-flow",
+        "name": "Parser Données",
+        "func": "const macBLE = msg.payload.macBLE;\nconst macWIFI = msg.payload.macWIFI;\nconst badgesDetectes = msg.payload.devices.map(device => device.mac_address_detectee);\nconst currentTime = new Date().toISOString();\n\nmsg.payload = {\n    macBLE,\n    macWIFI,\n    badgesDetectes,\n    currentTime\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "find-salle"
+            ]
+        ]
+    },
+    {
+        "id": "find-salle",
+        "type": "function",
+        "z": "presence-flow",
+        "name": "Trouver idSalle",
+        "func": "const macBLE = msg.payload.macBLE;\nconst macWIFI = msg.payload.macWIFI;\n\nmsg.topic = `SELECT idSalle FROM DETECTEUR WHERE macBLE = '${macBLE}' AND macWIFI = '${macWIFI}' AND Type_Capteur = 'Présence'`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 100,
+        "wires": [
+            [
+                "query-salle"
+            ]
+        ]
+    },
+    {
+        "id": "query-salle",
+        "type": "mysql",
+        "z": "presence-flow",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Requête Salle",
+        "x": 900,
+        "y": 100,
+        "wires": [
+            [
+                "process-presence"
+            ]
+        ]
+    },
+    {
+        "id": "process-presence",
+        "type": "function",
+        "z": "presence-flow",
+        "name": "Traiter Présence",
+        "func": "if (msg.payload.length > 0) {\n    const idSalle = msg.payload[0].idSalle;\n    const badgesDetectes = msg.payload.badgesDetectes;\n    const currentTime = new Date().toISOString();\n\n    // Mettre à jour les présences\n    const requetes = badgesDetectes.map(mac => {\n        return `UPDATE PRESENCE SET Present = 1, Derniere_Detection_Presence = '${currentTime}' WHERE idBadge IN (SELECT idBadge FROM BADGE WHERE macBLE = '${mac}') AND idCours IN (SELECT idCours FROM COURS WHERE idSalle = ${idSalle} AND '${currentTime}' BETWEEN Date_Debut AND Date_Fin);`;\n    });\n\n    msg.topic = requetes.join(' ');\n    return msg;\n} else {\n    node.error('Aucune salle trouvée pour ce détecteur.');\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 100,
+        "wires": [
+            [
+                "update-presence"
+            ]
+        ]
+    },
+    {
+        "id": "update-presence",
+        "type": "mysql",
+        "z": "presence-flow",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Mettre à Jour Présence",
+        "x": 1400,
+        "y": 100,
+        "wires": [
+            [
+                "debug-presence"
+            ]
+        ]
+    },
+    {
+        "id": "debug-presence",
+        "type": "debug",
+        "z": "presence-flow",
+        "name": "Debug Présence",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "x": 1650,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "527d970056fbc594",
+        "type": "mqtt in",
+        "z": "presence-flow",
+        "d": true,
+        "name": "Recevoir Données Porte",
+        "topic": "detecteur/porte/macwifi/#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "7e4b2f38.8c5d6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "585ab932367e365c",
+                "a74a0ebbbee66f17"
+            ]
+        ]
+    },
+    {
+        "id": "585ab932367e365c",
+        "type": "function",
+        "z": "presence-flow",
+        "name": "Parser Données",
+        "func": "const macBLE = msg.payload.mac_address_detectee;\nconst macBLE_detecteur = msg.payload.macBLE;\nconst macWIFI_detecteur = msg.payload.macWIFI;\nconst currentTime = new Date().toISOString();\n\nmsg.payload = {\n    macBLE,\n    macBLE_detecteur,\n    macWIFI_detecteur,\n    currentTime\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "c0e7fdd79a8dd599",
+                "ddd5cbe1f63621ab"
+            ]
+        ]
+    },
+    {
+        "id": "c0e7fdd79a8dd599",
+        "type": "function",
+        "z": "presence-flow",
+        "name": "Trouver idSalle",
+        "func": "const macBLE = msg.payload.macBLE_detecteur;\nconst macWIFI = msg.payload.macWIFI_detecteur;\n\nmsg.topic = `SELECT idSalle FROM DETECTEUR WHERE macBLE = '${macBLE}' AND macWIFI = '${macWIFI}' AND Type = 'Porte'`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 160,
+        "wires": [
+            [
+                "33d69b0ea66a97d2"
+            ]
+        ]
+    },
+    {
+        "id": "33d69b0ea66a97d2",
+        "type": "mysql",
+        "z": "presence-flow",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Requête Salle",
+        "x": 900,
+        "y": 160,
+        "wires": [
+            [
+                "7542a92262e4d878"
+            ]
+        ]
+    },
+    {
+        "id": "7542a92262e4d878",
+        "type": "function",
+        "z": "presence-flow",
+        "name": "Traiter Porte",
+        "func": "if (msg.payload.length > 0) {\n    const idSalle = msg.payload[0].idSalle;\n    const macBLE = msg.payload.macBLE;\n    const currentTime = new Date().toISOString();\n\n    // Vérifier si le badge est déjà présent\n    msg.topic = `SELECT * FROM PRESENCE WHERE idBadge IN (SELECT idBadge FROM BADGE WHERE macBLE = '${macBLE}') AND idCours IN (SELECT idCours FROM COURS WHERE idSalle = ${idSalle} AND '${currentTime}' BETWEEN DateInit AND DateFin);`;\n    return msg;\n} else {\n    node.error('Aucune salle trouvée pour ce détecteur.');\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 160,
+        "wires": [
+            [
+                "9f75cd8ebb0419e0",
+                "85902b1407a3b325"
+            ]
+        ]
+    },
+    {
+        "id": "9f75cd8ebb0419e0",
+        "type": "mysql",
+        "z": "presence-flow",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Mettre à Jour Porte",
+        "x": 1400,
+        "y": 160,
+        "wires": [
+            [
+                "4cbfdcc8d669a180"
+            ]
+        ]
+    },
+    {
+        "id": "4cbfdcc8d669a180",
+        "type": "debug",
+        "z": "presence-flow",
+        "name": "Debug Porte",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "x": 1650,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a774704029fb5c8e",
+        "type": "debug",
+        "z": "presence-flow",
+        "name": "debug MQTT Presence",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a74a0ebbbee66f17",
+        "type": "debug",
+        "z": "presence-flow",
+        "name": "debug MQTT Port",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "85902b1407a3b325",
+        "type": "debug",
+        "z": "presence-flow",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ddd5cbe1f63621ab",
+        "type": "debug",
+        "z": "presence-flow",
+        "name": "debug Parser Données",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d71e0bc2971d3d02",
+        "type": "mqtt in",
+        "z": "1b342d9a33e45289",
+        "name": "Détecteur Présence",
+        "topic": "detecteur/presence/macwifi/#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "85bc2de786afa561",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "74068f982a8b9cc6",
+        "type": "mqtt in",
+        "z": "1b342d9a33e45289",
+        "name": "Détecteur Porte",
+        "topic": "detecteur/porte/macwifi/#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "85bc2de786afa561",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "a9f979f927412551",
+                "6ab323704133697e",
+                "93a337a3c93c81c4"
+            ]
+        ]
+    },
+    {
+        "id": "a9f979f927412551",
+        "type": "function",
+        "z": "1b342d9a33e45289",
+        "name": "Trouver idSalle et idCours",
+        "func": "// Extraire les données du message MQTT\nconst mac_ble_detecteur = msg.payload.macBLE;\nconst mac_wifi_detecteur = msg.payload.macWIFI;\n\n// Déterminer le type de détecteur depuis le topic MQTT\nconst topic = msg.topic;\nconst type_detecteur = topic.includes(\"presence\") ? \"Présence\" : \"Porte\";\n\n// Extraire les badges détectés\nconst badges_detectes = msg.payload.devices \n    ? msg.payload.devices.map(d => d.mac_address_detectee) \n    : [msg.payload.mac_address_detectee];\n\nconst current_time = new Date().toISOString();\n\n// Construire la requête SQL pour trouver idSalle\nmsg.topic = `SELECT idSalle FROM DETECTEUR WHERE macBLE = '${mac_ble_detecteur}' AND macWIFI = '${mac_wifi_detecteur}'`;\n\n// Stocker les données pour les prochaines étapes (+ type de détecteur)\nmsg.data = { \n    badges_detectes, \n    current_time,\n    type_detecteur  // <-- Nouveau champ ajouté\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 100,
+        "wires": [
+            [
+                "0979683082dd242a",
+                "6e63ce7927eda0eb"
+            ]
+        ]
+    },
+    {
+        "id": "5fea57ee116df166",
+        "type": "function",
+        "z": "1b342d9a33e45289",
+        "name": "Parser Données Porte",
+        "func": "// Formater les données pour correspondre au flux de présence\nmsg.payload = {\n    macBLE: msg.payload.macBLE,\n    macWIFI: msg.payload.macWIFI,\n    devices: msg.payload.devices // Conserver tous les objets dans la liste\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "a9f979f927412551",
+                "120d08f94b7e53ba"
+            ]
+        ]
+    },
+    {
+        "id": "0979683082dd242a",
+        "type": "mysql",
+        "z": "1b342d9a33e45289",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Trouver idSalle",
+        "x": 670,
+        "y": 100,
+        "wires": [
+            [
+                "e729a4791166fd60",
+                "efd2db817766f701"
+            ]
+        ]
+    },
+    {
+        "id": "e729a4791166fd60",
+        "type": "function",
+        "z": "1b342d9a33e45289",
+        "name": "Trouver idCours Actif",
+        "func": "// Si idSalle trouvé, chercher idCours actif\nif (msg.payload.length > 0) {\n    const idSalle = msg.payload[0].idSalle;\n    const current_time = msg.data.current_time;\n\n    // Construire la requête SQL pour trouver idCours actif\n    msg.topic = `SELECT idCours FROM COURS WHERE idSalle = ${idSalle} AND '${current_time}' BETWEEN DateInit AND DateFin`;\n    msg.data.idSalle = idSalle; // Stocker idSalle pour les prochaines étapes\n    return msg;\n} else {\n    // Aucun idSalle trouvé\n    node.error(\"Aucune salle correspondante au détecteur.\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 100,
+        "wires": [
+            [
+                "b64132270772730a",
+                "d5f77ec82dacbd92"
+            ]
+        ]
+    },
+    {
+        "id": "b64132270772730a",
+        "type": "mysql",
+        "z": "1b342d9a33e45289",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Trouver Cours Actif",
+        "x": 1130,
+        "y": 100,
+        "wires": [
+            [
+                "1663a5b3e4cd6ff5"
+            ]
+        ]
+    },
+    {
+        "id": "1663a5b3e4cd6ff5",
+        "type": "function",
+        "z": "1b342d9a33e45289",
+        "name": "Mettre à Jour Présence",
+        "func": "if (msg.payload.length > 0) {\n    const idCours = msg.payload[0].idCours;\n    const { badges_detectes, current_time, type_detecteur } = msg.data;\n    const formatted_time = current_time.replace(\"T\", \" \").split(\".\")[0];\n\n    // Vérifier si aucun badge détecté\n    if (badges_detectes.length === 0) {\n        node.error(\"Aucun badge détecté.\");\n        return null;\n    }\n\n    const queries = [];\n    const isPresence = type_detecteur === \"Présence\";\n\n    // Requête principale (présence ou porte)\n    queries.push(`\n        UPDATE PRESENCE\n        SET \n            Present = ${isPresence ? 1 : 1}, \n            ${isPresence ? \"derniereDetectionPresence\" : \"derniereDetectionPorte\"} = '${formatted_time}'\n        WHERE idCours = ${idCours}\n          AND idBadge IN (\n              SELECT idBadge \n              FROM BADGE \n              WHERE macBLE IN (${badges_detectes.map(mac => `'${mac}'`).join(\", \")})\n          );\n    `);\n\n    // Si c'est une détection de présence, marquer les absents\n    if (isPresence) {\n        queries.push(`\n            UPDATE PRESENCE\n            SET Present = 0\n            WHERE idCours = ${idCours}\n              AND idBadge NOT IN (\n                  SELECT idBadge \n                  FROM BADGE \n                  WHERE macBLE IN (${badges_detectes.map(mac => `'${mac}'`).join(\", \")})\n              );\n        `);\n    }\n\n    msg.topic = queries.join(\" \");\n    return msg;\n} else {\n    node.error(\"Aucun cours actif trouvé.\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 100,
+        "wires": [
+            [
+                "2f91279bb8454dd3",
+                "538b14dabe4e264c"
+            ]
+        ]
+    },
+    {
+        "id": "2f91279bb8454dd3",
+        "type": "mysql",
+        "z": "1b342d9a33e45289",
+        "mydb": "73c24e6e23de2f24",
+        "name": "Mise à Jour Présence",
+        "x": 1630,
+        "y": 100,
+        "wires": [
+            [
+                "8e1f80b8d0dd6fa1"
+            ]
+        ]
+    },
+    {
+        "id": "8e1f80b8d0dd6fa1",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "Debug Résultats",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "x": 1880,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "538b14dabe4e264c",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "Debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "x": 1880,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d5f77ec82dacbd92",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "Debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "x": 1100,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "6e63ce7927eda0eb",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "Debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "data",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "efd2db817766f701",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "Debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "120d08f94b7e53ba",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6ab323704133697e",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "debug 15",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "93a337a3c93c81c4",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "debug 16",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "634ff53ae719e5f1",
+        "type": "mqtt in",
+        "z": "1b342d9a33e45289",
+        "name": "Détecteur Présence",
+        "topic": "detecteur/presence/macwifi/#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "85bc2de786afa561",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a8c5d7f3e5b2d9a1",
+        "type": "mqtt in",
+        "z": "1b342d9a33e45289",
+        "name": "Réception ESP",
+        "topic": "detecteur/presence/macwifi/#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "85bc2de786afa561",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 260,
+        "y": 600,
+        "wires": [
+            [
+                "d3f9e6a1b2c7d5f8",
+                "9cccf0eed140fa99"
+            ]
+        ]
+    },
+    {
+        "id": "d3f9e6a1b2c7d5f8",
+        "type": "function",
+        "z": "1b342d9a33e45289",
+        "name": "Stocker MAC",
+        "func": "let storedData = flow.get(\"devices\") || [];\nlet macBLE = flow.get(\"macBLE\") || msg.payload.macBLE;\nlet macWIFI = flow.get(\"macWIFI\") || msg.payload.macWIFI;\n\n// Stocker macBLE et macWIFI s'ils n'existent pas encore\nflow.set(\"macBLE\", macBLE);\nflow.set(\"macWIFI\", macWIFI);\n\n// Extraire la nouvelle adresse MAC détectée\nlet newDevice = msg.payload.devices[0];\n\n// Vérifier si elle est déjà enregistrée\nif (!storedData.some(d => d.mac_address_detectee === newDevice.mac_address_detectee)) {\n    storedData.push(newDevice);\n}\n\n// Sauvegarder la liste mise à jour\nflow.set(\"devices\", storedData);\n\n// Démarrer ou réinitialiser le timer\nmsg.payload = \"MAC stocké, en attente de 1 min...\";\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 600,
+        "wires": [
+            [
+                "c2e8f6a9b1d4e7f3",
+                "38f7b540a1bb0459"
+            ]
+        ]
+    },
+    {
+        "id": "c2e8f6a9b1d4e7f3",
+        "type": "trigger",
+        "z": "1b342d9a33e45289",
+        "name": "Attendre 1 minute",
+        "op1": "",
+        "op2": "1",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "60",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 700,
+        "y": 600,
+        "wires": [
+            [
+                "f7e2a6b9c1d8f5a3"
+            ]
+        ]
+    },
+    {
+        "id": "f7e2a6b9c1d8f5a3",
+        "type": "function",
+        "z": "1b342d9a33e45289",
+        "name": "Créer message final",
+        "func": "let storedData = flow.get(\"devices\") || [];\nlet macBLE = flow.get(\"macBLE\") || \"Inconnu\";\nlet macWIFI = flow.get(\"macWIFI\") || \"Inconnu\";\n\nif (storedData.length > 0) {\n    let finalMessage = {\n        \"macBLE\": macBLE,\n        \"macWIFI\": macWIFI,\n        \"devices\": storedData\n    };\n\n    // Réinitialiser les données après envoi\n    flow.set(\"devices\", []);\n    flow.set(\"macBLE\", null);\n    flow.set(\"macWIFI\", null);\n\n    msg.payload = finalMessage;\n    return msg;\n} else {\n    return null;  // Pas de données à envoyer\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 600,
+        "wires": [
+            [
+                "4daa0e2f071fadd6",
+                "a9f979f927412551"
+            ]
+        ]
+    },
+    {
+        "id": "4daa0e2f071fadd6",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "debug Détecteur Présence",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "38f7b540a1bb0459",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "9cccf0eed140fa99",
+        "type": "debug",
+        "z": "1b342d9a33e45289",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 740,
+        "wires": []
+    }
+]
